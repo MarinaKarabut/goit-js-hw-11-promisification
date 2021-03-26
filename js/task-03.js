@@ -11,17 +11,17 @@ const randomIntegerFromInterval = (min, max) => {
         const canProcess = Math.random() > 0.3;
     
         if (canProcess) {
-          resolve(transaction.id, delay);
+          resolve({ id: transaction.id, delay });
         } else {
-          reject(transaction.id);
+          reject({ id: transaction.id});
         }
       }, delay);
     });
   }
 
   
-  const logSuccess = (id, time) => {
-    console.log(`Transaction ${id} processed in ${time}ms`);
+const logSuccess = ({id, delay}) => {
+    console.log(`Transaction ${id} processed in ${delay}ms`);
   };
   
   const logError = id => {
