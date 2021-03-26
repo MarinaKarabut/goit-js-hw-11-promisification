@@ -24,7 +24,7 @@ const logSuccess = ({id, delay}) => {
     console.log(`Transaction ${id} processed in ${delay}ms`);
   };
   
-  const logError = id => {
+const logError = ({ id }) => {
     console.warn(`Error processing transaction ${id}. Please try again later.`);
   };
   
